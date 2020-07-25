@@ -39,4 +39,7 @@ File.open(path, 'w') { |f| f.write zlib_content }
 =begin
   Steps to check the newly created blob from this script:
   git cat-file -t bd9dbf5aae1a3862dd1526723246b20206e5fc37
+
+  To create the same blob with the same sha1 checksum, do the following at the CLI:
+  echo -n "what is up, doc?" | git hash-object --stdin
 =end
