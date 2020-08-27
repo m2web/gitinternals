@@ -1,12 +1,12 @@
 mkdir test
-cd test
+Set-Location test
 
 #remove git folder if present
 IF(Test-Path .git){
 	#Write-Output "got git"
-	rm .git -r -fo
+	Remove-Item .git -r -fo
 	# -r (recursive). Note that -f in PowerShell is ambiguous for -Filter and -Force and thus -fo needs to be used.
-	rm *
+	Remove-Item *
 } 
 
 git init
