@@ -12,7 +12,7 @@ require 'zlib'
 require 'fileutils'
 
 #git blob content
-content = "what is up, doc?"
+content = "File.txt v1"
 
 #git blob header
 header = "blob #{content.bytesize}\0"
@@ -27,7 +27,7 @@ sha1 = Digest::SHA1.hexdigest(store)
 zlib_content = Zlib::Deflate.deflate(store)
 
 #create the git object path from the SHA-1 hash
-#path should be .get/objects/bd/9dbf5aae1a3862dd1526723246b20206e5fc37
+#path should be .get/objects/03/cdcf9d586cf93a458f10fa7f2581fb00125883
 path = '.git/objects/' + sha1[0,2] + '/' + sha1[2,38]
 
 #create the directory if it does not exist
@@ -38,8 +38,8 @@ File.open(path, 'w') { |f| f.write zlib_content }
 
 =begin
   Steps to check the newly created blob from this script:
-  git cat-file -t bd9dbf5aae1a3862dd1526723246b20206e5fc37
+  git cat-file -t 03cdcf9d586cf93a458f10fa7f2581fb00125883
 
   To create the same blob with the same sha1 checksum, do the following at the CLI:
-  echo -n "what is up, doc?" | git hash-object --stdin
+  echo -n "File.txt v1" | git hash-object --stdin
 =end
