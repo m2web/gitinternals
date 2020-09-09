@@ -1,14 +1,4 @@
 #!/bin/bash
-#remove existing .git data
-#rm -rf .git
-#remove existing txt files
-#rm *.txt
-
-#reinitialize git
-#git init
-
-#the hooks scripts are noise here; remove them
-#rm .git/hooks/*
 
 for i in 1 2 3
 do
