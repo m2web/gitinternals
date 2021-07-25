@@ -103,7 +103,7 @@ While this may be interesting, the SHA-1 key for each version of your file isn't
 Now, let's get a look at the status of this git repo:
 ```shell
 $ git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -292,20 +292,20 @@ $ find .git/refs
 ```
 To create a new reference that will help you remember where your latest commit is, you can technically do something as simple as this:
 ```shell
-$ echo 9789529a6093286a847f440bbdde806c9778757a > .git/refs/heads/master
+$ echo 9789529a6093286a847f440bbdde806c9778757a > .git/refs/heads/main
 ```
 Note that 9789529a6093286a847f440bbdde806c9778757a is the third commit created above.
 
-Now, you can use the head reference "master" you just created instead of the SHA-1 value in your Git commands:
+Now, you can use the head reference "main" you just created instead of the SHA-1 value in your Git commands:
 ```shell
-$ git log --pretty=oneline master
-9789529a6093286a847f440bbdde806c9778757a (HEAD -> master) Third commit
+$ git log --pretty=oneline main
+9789529a6093286a847f440bbdde806c9778757a (HEAD -> main) Third commit
 fe4e9cf5fd9207848eeb9efedfb3e703290610b3 Second commit
 ba89b6b0fced65ccb90fe4ff27327a8c3b551e64 First commit
 ```
 You aren't encouraged to directly edit the reference files as we did above; instead, Git provides the safer command git update-ref to do this if you want to update a reference:
 ```shell
-$ git update-ref refs/heads/master 9789529a6093286a847f440bbdde806c9778757a
+$ git update-ref refs/heads/main 9789529a6093286a847f440bbdde806c9778757a
 ```
 That's basically what a branch in Git is: a simple pointer or reference to the head of a line of work. To create a branch pointing back at the second commit, you can do this: 
 ```shell
@@ -336,7 +336,7 @@ However in some rare cases the HEAD file may contain the SHA-1 value of a git ob
 If you look at the file, you'll normally see something like this:
 ```shell
 $ cat .git/HEAD
-ref: refs/heads/master
+ref: refs/heads/main
 ```
 If you run git checkout test, Git updates the file to look like this:
 ```shell
@@ -348,7 +348,7 @@ When you run `git commit`, it creates the commit object, specifying the parent o
 You can also manually edit this file, but again a safer command exists to do so: `git symbolic-ref`. You can read the value of your HEAD via this command:
 ```shell
 $ git symbolic-ref HEAD
-refs/heads/master
+refs/heads/main
 ```
 You can also set the value of HEAD using the same command:
 ```shell
@@ -413,22 +413,22 @@ tree 3 tag
 ```
 ### Remotes
 
-The third type of reference that you'll see is a remote reference. If you add a remote and push to it, Git stores the value you last pushed to that remote for each branch in the refs/remotes directory. For instance, you can add a remote called origin and push your master branch to it:
+The third type of reference that you'll see is a remote reference. If you add a remote and push to it, Git stores the value you last pushed to that remote for each branch in the refs/remotes directory. For instance, you can add a remote called origin and push your main branch to it:
 ```shell
 $ git remote add origin https://github.com/m2web/gitinternals.git
-$ git push -u origin master
+$ git push -u origin main
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Compressing objects: 100% (5/5), done.
 Writing objects: 100% (9/9), 749 bytes \| 749.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0)
 To https://github.com/m2web/gitinternals.git
-* [new branch] master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
+* [new branch] main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
-Then, you can see what the master branch on the origin remote was the last time you communicated with the server, by checking the refs/remotes/origin/master file:
+Then, you can see what the main branch on the origin remote was the last time you communicated with the server, by checking the refs/remotes/origin/main file:
 ```shell
-$ cat .git/refs/remotes/origin/master
+$ cat .git/refs/remotes/origin/main
 9789529a6093286a847f440bbdde806c9778757a
 ```
 Remote references differ from branches (refs/heads references) mainly in that they're considered read-only. You can `git checkout` to a remote reference, but Git won't point HEAD at one, so you'll never update it with a commit command. Git manages them as bookmarks to the last known state of where those branches were on those servers.

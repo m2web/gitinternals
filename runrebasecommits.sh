@@ -16,7 +16,7 @@ do
   git commit -m "F$i"
 done
 
-git checkout master
+git checkout main
 
 for i in 4 5
 do

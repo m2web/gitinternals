@@ -11,7 +11,7 @@ IF(Test-Path .git){
 
 git init
 
-#number of commits on the master branch
+#number of commits on the main branch
 $numberOfMasterCommitsArray = @("M1", "M2", "M3")
  
 for($i = 0; $i -lt $numberOfMasterCommitsArray.length; $i++){ 
