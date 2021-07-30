@@ -431,7 +431,9 @@ Then, you can see what the main branch on the origin remote was the last time yo
 $ cat .git/refs/remotes/origin/main
 9789529a6093286a847f440bbdde806c9778757a
 ```
-Remote references differ from branches (refs/heads references) mainly in that they're considered read-only. You can `git checkout` to a remote reference, but Git won't point HEAD at one, so you'll never update it with a commit command. Git manages them as bookmarks to the last known state of where those branches were on those servers.
+Remote references differ from branches (refs/heads references) mainly in that they're considered read-only. You can `git checkout` to a remote reference, but Git won't point HEAD at one, so you'll never update it with a commit command. Git manages them as bookmarks to the last known state of where those branches were on those servers.  
+
+Finally, here is the .git folder tree output:
 
 ## tree ./git output
 
