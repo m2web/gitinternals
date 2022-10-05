@@ -1,5 +1,7 @@
 # The Canonic Git Internals Links
 
+## More coming soon :bowtie:
+
 The following URLs are from the Git Pro 2nd edition book. :octocat:
 
 * https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain
