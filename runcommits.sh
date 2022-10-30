@@ -1,14 +1,19 @@
 #!/bin/bash
 #remove existing .git data
-#rm -rf .git
+if [ -d ".git" ]; then
+  rm -rf .git
+fi
+
 #remove existing txt files
-#rm *.txt
+if compgen -G "*.txt" > /dev/null; then
+    rm *.txt
+fi
 
 #reinitialize git
-#git init
+git init
 
 #the hooks scripts are noise here; remove them
-#rm .git/hooks/*
+rm .git/hooks/*
 
 for i in 1 2 3
 do
@@ -25,6 +30,8 @@ do
   git add F$i.txt
   git commit -m "F$i"
 done
+
+git checkout master
 
 for i in 5 6 7
 do
