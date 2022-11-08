@@ -170,14 +170,14 @@ For example, here is our starting state:
 
 We then update our file.txt file:
 
-![Git's Three States Update 1](git-data-model-references-states/states-1.png)
+![Git's Three States Update 1](git-data-model-references-states/states-2.png)
 
 Once we are done editing the file, let's place it into stage:
 
-![Git's Three States Update 2](git-data-model-references-states/states-2.png)
+![Git's Three States Update 2](git-data-model-references-states/states-3.png)
 
 Next, let's commit what is in stage to our repo:
 
-![Git's Three States Update 3](git-data-model-references-states/states-3.png)
+![Git's Three States Update 3](git-data-model-references-states/states-4.png)
 
 See more at https://missing.csail.mit.edu/2020/version-control/
