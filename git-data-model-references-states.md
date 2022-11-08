@@ -41,16 +41,25 @@ Now, we will create a local repository:
 $ git init myrepo
 
 Add a blob object:
+
+```bash
 $ echo "Once more unto the breach dear friends, once more." > test.txt
 24941f46f1b778a70a22424eb4c26fbefe629ea8
+```
 
 Let's investigate the object content with the git cat-file command:
+
+```bash
 $ git cat-file -p 24941f46f1b778a70a22424eb4c26fbefe629ea8
 Once more unto the breach dear friends, once more.
+```
 
 Let's look at the type of git object for our new object:
+
+```bash
 $ git cat-file -t 24941f46f1b778a70a22424eb4c26fbefe629ea8
 blob
+```
 
 Next, let's look at the concept of a snapshot.
 
