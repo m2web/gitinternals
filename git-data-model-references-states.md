@@ -136,19 +136,19 @@ string read_reference(reference, name){
 string load_reference(reference, name_or_id){
     if (name_or_id in references){
         return load(references[name_or_id])
-	} else {
+    } else {
         return load(name_or_id)
-	}
+    }
 }
 ```
 
 With the above, Git can use human-readable references like "master" instead of a long hexadecimal string.
 
-Often want a notion of "where we currently are" in the history. In Git, that "where we currently are" is a special reference called "HEAD".
+Often we want a notion of "where we currently are" in the history. In Git, that "where we currently are" is a special reference called "HEAD".
 
 ### Repositories
 
-Finally, we can roughly define what is a Git repository: it is the data objects and references.
+Finally, we can roughly define a Git repository: it is the data objects and references.
 
 On disk, all Git stores are objects and references: that's all there is to Git's data model. All git commands map to some manipulation of the commit DAG by adding objects and adding/updating references.
 
