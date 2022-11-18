@@ -33,7 +33,7 @@ done
 
 git checkout master
 
-for i in 5 6 7
+for i in 4 5 6
 do
   echo "M$i" > M$i.txt
   git add M$i.txt
