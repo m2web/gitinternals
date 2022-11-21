@@ -1,27 +1,7 @@
-<style>
-    Head1 { 
-        font-weight:800;
-        font-size:36px
-    }
-    Head2 { 
-        font-weight:700;
-        font-size:30px
-    }
-    NormalFont { 
-        font-weight:500;
-        font-size:15px 
-    }
-    HeavyFont { 
-        font-weight:700;
-        font-size:17px 
-    }
-</style>
+# Git cherry-pick
 
-<Head1> Git cherry-pick </Head1>
+## What is a cherry-pick
 
-<Head2> What is a cherry-pick </Head2> 
-
-<NormalFont>
 First, start with the official documentation at [git-cherry-pick](https://git-scm.com/docs/git-cherry-pick):
 
 > Given one or more existing commits, apply the change each one introduces, recording a new commit for each. This requires your working tree to be clean (no modifications from the HEAD commit).<br><br>
@@ -33,16 +13,12 @@ First, start with the official documentation at [git-cherry-pick](https://git-sc
 > 5. No other modifications are made.
 
 In other words, cherry picking is the act of picking a commit from one branch and applying it to another. With the `cherry-pick` command, Git commits are selected by reference and appended to the current working HEAD.
-</NormalFont>
+
 <!-- Then, use the markdown styling from Atlassian's Cherry-pick page at: [Atlassian's Cherry-pick page](https://www.atlassian.com/git/tutorials/cherry-pick) -->
 
-<Head2> 
-How to cherry-pick
-</Head2>
+## How to cherry-pick
 
-<NormalFont> 
 To demonstrate how to use git cherry-pick we have a repository with the following branches:
-</NormalFont>
 
 ```bash
     M1 - M2 - M3    Main
@@ -68,17 +44,13 @@ c6d62f3 M2
 6bbe06c M1
 ```
 
-<NormalFont>
 Using the 0622568 hash reference, we execute the cherry-pick command:
-</NormalFont>
 
 ```bash
 git cherry-pick 0622568
 ```
 
-<NormalFont>
 Now, our Git history will look like:
-</NormalFont>
 
 ```bash
     M1 - M2 - M3 - F1   Main
@@ -86,9 +58,7 @@ Now, our Git history will look like:
            F1 - F2      Feature
 ```
 
-<NormalFont>
 The F1 commit has been successfully picked into the main branch.
-</NormalFont>
 
 <!-- What I like about the above link is that it shows the command line . Also, I like the block style characters and background font-color contrast that are used to show the command line
 
