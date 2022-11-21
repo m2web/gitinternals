@@ -1,8 +1,61 @@
 # Git cherry-pick
 
-## First, start with the official documentation at [git-cherry-pick](https://git-scm.com/docs/git-cherry-pick)
+## What is a cherry-pick
+
+First, start with the official documentation at [git-cherry-pick](https://git-scm.com/docs/git-cherry-pick):
+
+> Given one or more existing commits, apply the change each one introduces, recording a new commit for each. This requires your working tree to be clean (no modifications from the HEAD commit).<br><br>
+> When it is not obvious how to apply a change, the following happens:<br>
+> 1. The current branch and HEAD pointer stay at the last commit successfully made.<br>
+> 2. The CHERRY_PICK_HEAD ref is set to point at the commit that introduced the change that is difficult to apply.<br>
+> 3. Paths in which the change applied cleanly are updated both in the index file and in your working tree.<br>
+> 4. For conflicting paths, the index file records up to three versions, as described in the "TRUE MERGE" section of git-merge[1]. The working tree files will include a description of the conflict bracketed by the usual conflict markers <<<<<<< and >>>>>>>.<br>
+> 5. No other modifications are made.
+
+In other words, cherry picking is the act of picking a commit from one branch and applying it to another. With the `cherry-pick` command, Git commits are selected by reference and appended to the current working HEAD.
 
 ## Then, use the markdown styling from Atlassian's Cherry-pick page at: [Atlassian's Cherry-pick page](https://www.atlassian.com/git/tutorials/cherry-pick)
+
+To demonstrate how to use git cherry-pick let us assume we have a repository with the following branch state:
+
+```bash
+    M1 - M2 - M3    Main
+          \
+           F1 - F2  Feature
+```
+
+For example: `git cherry-pick commitSha1Reference`. Here, commitSha is a commit reference. You can find a commit reference with `git log`. In this example we want to use the commit `F2` in main branch. First we ensure that we are working on the main branch:
+
+```bash
+git checkout main
+```
+
+Let's get the F1 commit's sha-1 hash reference with the `git log --color --oneline` command:
+
+```bash
+$ git log --color --oneline feature
+0646b6f (feature) F2
+0622568 F1
+926f920 M3
+c6d62f3 M2
+6bbe06c M1
+```
+
+Using the 0622568 hash reference, we execute the cherry-pick command:
+
+```bash
+git cherry-pick 0622568
+```
+
+Now, our Git history will look like:
+
+```bash
+    M1 - M2 - M3 - F1   Main
+          \
+           F1 - F2      Feature
+```
+
+The F1 commit has been successfully picked into the main branch.
 
 ### What I like about the above link is that it shows the command line . Also, I like the block style characters and background font-color contrast that are used to show the command line
 
