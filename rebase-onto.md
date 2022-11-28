@@ -20,7 +20,13 @@ OK. Here is what we have and what we want:
 
 ![what we have, what we want](rebase-onto-images/rebase-onto.png)
 
-Let's rebase the child of ddddadc (F2) which is c7003ce (F3) and through e1ce6c0 (F4) from the feature branch and apply them to the main branch. Or, in other words, let's change the parent of F3 from ddddadc to 1b989c5 and include e1ce6c0 (F4) :
+Looking at what `rebase-onto` does, it essentially changes the parent of the child commit and then applies the child commit to the new parent:
+
+```bash
+git rebase --onto <newparent> <oldparent> <until>
+```
+
+Let's rebase the child of ddddadc (F2) which is c7003ce (F3) and through e1ce6c0 (F4) from the feature branch and apply them to the main branch. Or, in other words, let's change the parent of F3 from ddddadc to 1b989c5 and include e1ce6c0 (F4). So, let's do it:
 
 ```bash
 git rebase --onto 1b989c5 ddddadc e1ce6c0
@@ -49,7 +55,6 @@ git merge temp-branch
 git branch -d temp-branch
 ```
 
-<!-- interactive rebase removing feature branch commits F3 through F5 -->
 Now we need to remove the commits from the feature branch. We can do this with an interactive rebase. We will start with the F2 commit (ddddadc):
 
 ```bash
