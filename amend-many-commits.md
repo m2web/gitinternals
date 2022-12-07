@@ -86,4 +86,6 @@ Note that the amended commits (M2, M3, and M4) will have a different SHA-1 hash 
 
 Finally, notice that the M1 commit still has the same SHA-1 hash, `9642dbf`, as it was not changed.
 
+Remember that this is a rebasing command where every commit in the range HEAD~3..HEAD with a changed message/content and all of its descendants will be rewritten. **Don’t push any commit that you’ve already pushed to a central server as doing so will confuse other developers by providing an alternate version of the same change**.
+
 Enjoy!
