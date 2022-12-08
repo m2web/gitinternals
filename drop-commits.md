@@ -1,6 +1,6 @@
-# Dropping Commits
+# Dropping (Deleting) Commits
 
-To demonstrate how to drop commmits, let us assume we have a repository with the following branch state:
+To demonstrate how to drop (delete) commmits, let us assume we have a repository with the following branch state:
 
 ```bash
     M1 <- M2 <- M3 <- M4
