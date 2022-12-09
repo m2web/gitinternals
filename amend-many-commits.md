@@ -20,7 +20,7 @@ To modify a commit that is farther back in your history, you can use the rebase 
 git rebase -i HEAD~3
 ```
 
-Note that I am indicating how far back you want to rewrite commits by telling the command which commit to rebase onto which is the HEAD of the M2 commit. It may be easier to remember the ~3 because you're trying to edit the last three commits.
+Note the ~3 that follows the HEAD. Here, I am indicating how far back you want to rewrite commits by telling the command which commit to rebase onto, which is in this case, the HEAD of the M2 commit. It may be easier to remember the ~3 notation as trying to include the last 3 commits.
 
 When issuing the command `git rebase -i HEAD~3`, you will see a list of commits that you are about to rebase:
 
@@ -30,19 +30,19 @@ Notice the reverse order of the commits here. The interactive rebase provides yo
 
 I updated the commands from pick to edit for each commit, so that it stops at the commit and allows me to edit that commit.
 
-![rebase list](amend-many-commits/interactive-rebase-editor-2.png)
+![rebase list 2](amend-many-commits/interactive-rebase-editor-2.png)
 
 After saving the file and exiting the editor, you will be taken to the commit message of the first commit in the list.
 
-![rebase list](amend-many-commits/amend-M2.png)
+![rebase list 3](amend-many-commits/amend-M2.png)
 
 I then issue the command `git commit --amend` to change the commit message of M2.
 
-![rebase list](amend-many-commits/edit-M2.png)
+![rebase list 4](amend-many-commits/edit-M2.png)
 
 Then, I issue the command `git rebase --continue` to continue the rebase.
 
-![rebase list](amend-many-commits/amend-M3.png)
+![rebase list 5](amend-many-commits/amend-M3.png)
 
 So, now let's add a new file to our M3 commit and also amend the commit message:
 
@@ -54,11 +54,11 @@ git commit --amend
 
 Here is the edited commit message:
 
-![rebase list](amend-many-commits/edit-M3.png)
+![rebase list 6](amend-many-commits/edit-M3.png)
 
 Then, after saving the edits, I issue the command `git rebase --continue` to continue the rebase.
 
-![rebase list](amend-many-commits/amend-M4.png)
+![rebase list 7](amend-many-commits/amend-M4.png)
 
 Now, let's add a new file to our M4 commit and amend the commit message:
 
@@ -70,7 +70,7 @@ git commit --amend
 
 Here is the edited commit message:
 
-![rebase list](amend-many-commits/edit-M4.png)
+![rebase list 8](amend-many-commits/edit-M4.png)
 
 Then, after saving the edits, I issue the command `git rebase --continue` to continue the rebase.
 
@@ -82,7 +82,7 @@ Now, our Git history will look like:
 
 Note that the amended commits (M2, M3, and M4) will have a different SHA-1 hash than the original commit hash as it is a new commit:
 
-![rebase list](amend-many-commits/git-history-amended.png)
+![rebase list 9](amend-many-commits/git-history-amended.png)
 
 Finally, notice that the M1 commit still has the same SHA-1 hash, `9642dbf`, as it was not changed.
 
