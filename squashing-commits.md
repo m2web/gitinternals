@@ -20,11 +20,15 @@ We want to squash or combine commmits M3 and M4. To do this, we can use the `git
 git rebase -i HEAD~3
 ```
 
+Note the ~3 that follows the HEAD. Here, I am indicating how far back you want to rewrite commits by telling the command which commit to rebase onto, which is in this case, the HEAD of the M2 commit. It may be easier to remember the ~3 notation as trying to include the last 3 commits.
+
 This will open your default editor with the following content:
 
 ![git rebase -i](squashing-commits/git-rebase-i.png)
 
-As you can see from above, I mark the M3 and M4 commits with the `s` or `squash` and save the file. This will squash commits M3 and M4. From here, I will update the commit message of M3 and M4. I will then save the file and exit the editor. This will update the commit message of M3 and M4:
+Notice the reverse order of the commits here. The interactive rebase provides you a script that will start at the commit you specify on the command line (HEAD~3) and replay the changes introduced in each of these commits from top to bottom. It lists the oldest at the top, because that’s the first one it will replay.
+
+Moreover, as you can see from above, I mark the M3 and M4 commits with the `s` or `squash` and then saved the file. This will squash commits M3 and M4. From here, I will update the commit message of M3 and M4. I will then save the file and exit the editor. This will update the commit message of M3 and M4:
 
 ![git rebase -i](squashing-commits/squash-commits-rebase-i.png)
 
