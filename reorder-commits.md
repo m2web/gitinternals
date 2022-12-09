@@ -54,7 +54,7 @@ Here is what we have and what we want:
 
 ![what we have, what we want](reorder-commits/reorder-commits-update-message.png)
 
-We want to reorder the commits M2 and M3. To do this, we can use the `git rebase -i HEAD~3` command to include M2, M3, and M4:
+We want to reorder the commits M2 and M3 and ammend M3's commit message. To do this, we can use the `git rebase -i HEAD~3` command to include M2, M3, and M4:
 
 ```bash
 git rebase -i HEAD~3
@@ -64,7 +64,7 @@ This will open your default editor with the following content:
 
 ![git rebase -i](reorder-commits/git-rebase-i.png)
 
-Here, we will change the order of the commits. We will move M3 above M2. We will also change the commit message of M3:
+Here, we will change the order of the commits with our editor. We will move M3 above M2. We will also change the commit message of M3:
 
 ![git rebase -i](reorder-commits/rebase-i-M2-M3-reordered.png)
 
