@@ -77,7 +77,7 @@ Now, let's look at the log for the main branch:
 
 ![feature branch output](rebase-onto-images/main-after-everything.png)
 
-Finally, here is a view from Gitkrakens `GitLens` Visual Studio Code extension:
+Finally, here is a view from Gitkrakens' `GitLens` Visual Studio Code extension:
 
 ![feature branch output](rebase-onto-images/gitkracken-gitlens-final-view.png)
 
