@@ -4,7 +4,7 @@
 
 Because of Git's thin abstraction and history, learning Git top-down can lead to a lot of misunderstandings. While it's possible to memorize a handful of commands, you end up treating Git as a set of magic spells and following the approach in the comic above whenever there are issues with your repository.
 
-Moreover, a set of commands have to be'memorized, while Git's data model can be understood. 
+Moreover, `a set of commands have to be memorized`, while `Git's data model can be understood`. 
 
 ## Git's Data Model
 
