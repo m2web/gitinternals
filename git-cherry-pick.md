@@ -14,8 +14,6 @@ First, start with the official documentation at [git-cherry-pick](https://git-sc
 
 In other words, cherry picking is the act of picking a commit from one branch and applying it to another. With the `cherry-pick` command, Git commits are selected by reference and appended to the current working HEAD.
 
-<!-- Then, use the markdown styling from Atlassian's Cherry-pick page at: [Atlassian's Cherry-pick page](https://www.atlassian.com/git/tutorials/cherry-pick) -->
-
 ## How to cherry-pick
 
 To demonstrate how to use git cherry-pick we have a repository with the following branches:
@@ -33,6 +31,7 @@ For example: `git cherry-pick commitSha1Reference`. Here, commitSha1Reference is
 ```bash
 git checkout main
 ```
+
 Let's get the F1 commit's sha-1 hash reference with the `git log --color --oneline` command:
 
 ```bash
