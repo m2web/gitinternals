@@ -4,7 +4,7 @@
 
 Because of Git's thin abstraction and history, learning Git top-down can lead to a lot of misunderstandings. While it's possible to memorize a handful of commands, you end up treating Git as a set of magic spells and following the approach in the comic above whenever there are issues with your repository.
 
-Moreover, `a set of commands have to be memorized`, while `Git's data model can be understood`. 
+Moreover, `a set of commands have to be memorized`, while `Git's data model can be understood`.
 
 ## Git's Data Model
 
@@ -37,6 +37,7 @@ Let's compare that to the Git data model:
 Above, the root folder (C:\) is a tree object that contains the myFolder tree object and a blob named git-is-great.txt. The myFolder tree contains a blob named hello.txt.
 
 ### The cat-file command
+
 Now, we will create a local repository:
 $ git init myrepo
 
@@ -118,7 +119,7 @@ Blobs, trees, and commits are unified in this way: they are all objects. When Gi
 
 ### References
 
-Using SHA-1 hashes is inconvenient because humans aren't good at remembering strings of 40 hexadecimal characters. Git's solution to this problem is human-readable names for SHA-1 hashes, called "references". 
+Using SHA-1 hashes is inconvenient because humans aren't good at remembering strings of 40 hexadecimal characters. Git's solution to this problem is human-readable names for SHA-1 hashes, called "references".
 
 References are pointers to commits. Unlike objects, which are immutable, references are mutable and therefore can be updated to point to a new commit. For example, the master reference usually points to the latest commit in the main branch of development.
 
@@ -189,4 +190,4 @@ Next, let's commit what is in stage to our repo:
 
 ![Git's Three States Update 3](git-data-model-references-states/states-4.png)
 
-See more at https://missing.csail.mit.edu/2020/version-control/
+See more at [Git Version Control](https://missing.csail.mit.edu/2020/version-control/)
