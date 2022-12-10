@@ -6,7 +6,7 @@ Here is the main branch:
 
 ![main branch output](pick-many-images/main-output.png)
 
-Note the alias `lg` command above. In my user account's folder, I have a .gitconfig file that has the following: 
+Note the alias `lg` command above. In my user account's folder, I have a .gitconfig file that has the following:
 
 ```bash
 lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
